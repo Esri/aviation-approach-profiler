@@ -1,0 +1,25 @@
+{
+  "name": "map-app",
+  "version": "0.1",
+  "authors": [
+    "Josh Peterson <jpeterson05@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "*",
+    "backbone": "1.0.0",
+    "d3": "3.5.5",
+    "jquery": "~1.10.2",
+    "underscore": "~1.5.2",
+    "respond": "~1.4.0",
+    "fontawesome": "~4.0.3"
+  }
+}

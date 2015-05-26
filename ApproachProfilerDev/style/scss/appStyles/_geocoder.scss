@@ -1,0 +1,16 @@
+.simpleGeocoder{
+  position:absolute;
+  z-index:2;
+  top:13px;
+  left:90px
+}
+
+.simpleGeocoder_LargeHorizontalSlider{
+  // @extend .simpleGeocoder;
+  left:228px
+}
+
+.simpleGeocoder_VerticalSlider{
+  // @extend .simpleGeocoder;
+  left:60px
+} 

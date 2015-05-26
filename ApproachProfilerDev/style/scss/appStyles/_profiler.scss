@@ -1,0 +1,78 @@
+.profiler-container{
+  position:absolute;
+  top:0;
+  right:40px;
+  width:300px;
+  transition:top .2s ease;
+}
+
+.profiler-container .handle{
+  margin-top:-1px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  height:35px;
+  // background-color:$app-highlight;
+  font-size:1.5em;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 1px 10px rgba(0,0,0,0.4);
+  cursor:pointer;
+}
+
+.profiler-container .handle .title{
+  display:inline-block
+}
+
+.profiler-container .handle i.fa{
+  line-height:35px;
+  margin-right:20px;
+  float:right
+}
+
+.profiler-container .handle i.up{
+  display:none
+}
+
+.profiler-container.open{
+  top:15px;
+}
+
+.profiler-container.open .handle{
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+}
+
+.profiler-container.open .handle i.down{
+  display:none
+}
+
+.profiler-container.open .handle i.up{
+  display:inline-block
+}
+
+.profiler-container .content{
+  margin:0 5px;
+  display:none;
+  box-shadow:0 1px 10px rgba(0,0,0,0.4);
+  height:75px;
+  background-color:#fff;
+  padding:20px
+}
+
+.surface-layer{
+  cursor:pointer;
+}
+
+.surface-layer path{
+  stroke-width:0
+}
+
+.surface-layer path:hover{
+  fill:#81a05c;
+  stroke:#f00;
+  stroke-width:3
+}
+
+

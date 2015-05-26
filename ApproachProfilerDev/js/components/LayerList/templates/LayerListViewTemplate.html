@@ -1,0 +1,56 @@
+<div class="layer-list">
+	<div class="column">
+		<h3>Models</h3>
+		<div class="models">
+			<% _.each(models, function(model) { %>
+				<div class="models-radios">
+				  <div class="radio">
+					  <label>
+					  	<% if (model.name === app.config.defaultModel) { %>
+					    	<input type="radio" name="modelsRadios" value="<%= model.name %>" checked><%= model.label %>
+					  	<% } else { %>
+							<input type="radio" name="modelsRadios" value="<%= model.name %>"><%= model.label %>
+					  	<% } %>
+					  </label>
+				  </div>
+				</div>
+			<% }); %>
+		</div>
+	</div>
+	<div class="column">
+		<h3>Layers</h3>
+		<div class="layers-checkboxes">
+			
+			<!-- <div class="checkbox" data-stopPropagation="true">
+			  <label data-stopPropagation="true">
+			    <input type="checkbox" id="accuracy_check" value="accuracy" checked data-stopPropagation="true">Obstruction Accuracy
+			  </label>
+			</div> -->
+
+			<div class="checkbox" data-stopPropagation="true">
+			  <label data-stopPropagation="true">
+			    <input type="checkbox" id="contours_check" value="contours" checked data-stopPropagation="true">Contours
+			  </label>
+			</div>
+
+			<div class="checkbox" data-stopPropagation="true">
+			  <label data-stopPropagation="true">
+			    <input type="checkbox" id="elevBand_check" value="elevBand" checked data-stopPropagation="true">Elevation Band
+			  </label>
+			</div>
+
+			<div class="checkbox" data-stopPropagation="true">
+			  <label data-stopPropagation="true">
+			    <input type="checkbox" id="heatmap_check" value="heatmap" checked data-stopPropagation="true">Heatmap
+			  </label>
+			</div>
+
+			<div class="checkbox" data-stopPropagation="true">
+			  <label data-stopPropagation="true">
+			    <input type="checkbox" id="obstructions_check" value="obstruction" checked data-stopPropagation="true">Obstructions
+			  </label>
+			</div>
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,152 @@
+        .graphViewContainer {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .axis path, .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        /* this can't have any transparency --
+        otherwise the below-zero fill will show through */
+        .areaMin {
+            /*fill: #1e7b1e; darker forest green */
+            stroke: #888;
+            stroke-opacity: 0.5;
+            stroke-width: 1px;
+            stroke-dasharray: 3 3;
+            /*fill: url(#gradient);*/
+        }
+        .areaMax {
+            /*fill: #adebad; lighter green */
+            stroke: #666;
+            stroke-opacity: 0.5;
+            stroke-width: 1px;
+            /*fill: url(#maxGradient);*/
+        }
+        .userPolygons {
+            stroke: #FFA000;
+            stroke-opacity: 0.5;
+            stroke-width: 1px;
+            fill: rgba(255, 165, 0, 0.25);
+            pointer-events: none;
+        }
+        .userPolylines {
+            stroke: #FFA000;
+            stroke-opacity: 0.5;
+            stroke-width: 1px;
+            fill: rgba(255, 165, 0, 0.25);
+            pointer-events: none;
+        }
+        .vectorOverlayPolylines {
+            stroke: #9494B8;
+            stroke-opacity: 0.5;
+            stroke-width: 1px;
+            fill: rgba(235, 224, 224, 0.25);
+        }
+        .vectorOverlayPolylines:hover {
+            stroke: red;
+        }
+        .slope-line {
+            fill: #FFF;
+            fill-opacity: 0;
+            stroke: #940F32;
+            stroke-width: 2px;
+        }
+        .runway-line {
+            fill: #FFF;
+            fill-opacity: 0;
+            stroke: black;
+            stroke-width: 2px;
+        }
+        .below-zero {
+            fill: steelblue;
+            /*fill: rgba(70,130,180,0.5);*/
+            fill-opacity: 0.4;
+            stroke: #333;
+            stroke-dasharray: 6 3;
+        }
+        .background-overlay {
+            /*fill: url(#skyGradient);*/
+        }
+        .overlay {
+          fill: none;
+          pointer-events: all;
+        }
+
+        .focus circle {
+          fill: none;
+          stroke: steelblue;
+        }
+        .focus-text {
+            pointer-events: none;
+            stroke-width: 0;
+            fill: black;
+        }
+        .obs-buffer.penetrates {
+            fill: #FFF;
+            fill-opacity: 0;
+            stroke: yellow;
+            stroke-width: 4;
+            stroke-dasharray: 2 1;
+            pointer-events: none;
+        }
+        .obstruction {
+            fill: blue;
+            stroke: blue;
+            stroke-width: 2;
+            pointer-events: none;
+        }
+        .obstruction.penetrates {
+            fill: red;
+            stroke: red;
+            stroke-width: 2;
+            pointer-events: none;
+        }
+        .obs-buffer {
+            fill: #FFF;
+            fill-opacity: 0;
+            stroke: yellow;
+			stroke-width: 4;            
+            stroke-dasharray: 2 1;
+            pointer-events: none;
+        }
+        .user-obstruction {
+            fill: orange;
+            stroke: orange;
+            stroke-width: 2;
+            pointer-events: none;
+        }
+        .user-obs-buffer {
+            fill: #FFF;
+            fill-opacity: 0;
+            stroke: #555;
+            stroke-opacity: 0.5;
+            stroke-dasharray: 2 1;
+            pointer-events: none;
+        }
+        .penetrates ~ text {
+            fill: red;
+        }
+        .reset-button {
+            padding: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .grid .tick {
+            stroke: lightgrey;
+            opacity: 0.7;
+        }
+        .grid path {
+            stroke-width: 0;
+        }
+        .axis .tick line {
+            stroke: lightgray;
+            /*stroke-dasharray: 3 2;*/
+        }

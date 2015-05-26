@@ -1,0 +1,27 @@
+:focus{
+  outline:0
+}
+
+html,body{
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  background-color:$app-background
+}
+
+.map-container{
+  z-index:2;
+  position:absolute;
+  top:52px;
+  right:0;
+  left:0;
+  bottom:0;
+  background-color:#333;
+  transition:bottom .2s ease
+}
+
+.super{
+  font-size:.6em;
+  vertical-align:super;
+  color:#1e90ff}
