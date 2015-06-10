@@ -25,12 +25,12 @@ define([], function() {
 		// ############################################
 
 		// ArcGIS Online Url, Portal Url (optional)
-		AGOLOrgUrl: 'http://airport.maps.arcgis.com/',
+		AGOLOrgUrl: 'http://airport.map.arcgis.com/', 
 		portalUrl: '',
 
 		// Registered App ID, Web map
-		appId: 'htTDubVN6MTfUlYh',
-		webmap: '309e64b9c33d4eb6b3babbda9bde2a03',
+		appId: 'htTDubVfdMTfUlYh',
+		webmap: '309e64b9c33d4eb6b3babbda9bde2a34',
 
 		// ############################################
 		//   App style settings
@@ -38,7 +38,7 @@ define([], function() {
 
 		// Header
 		//  - Note: Color format is rgb(r,g,b) or hex (#xxxxxx)
-		applicationTitle: 'Aviation Approach Profiler',
+		applicationTitle: 'Approach Profiler',
 		applicationNavBarColor: 'rgb(8, 49, 86)', // #083156
 		applicationNavBarTextColor: 'rgb(255, 255, 255)',
 		applicationNavBarBorder: {
@@ -246,41 +246,35 @@ define([], function() {
 					// Layer names must match web map (case sensitive)
 					layers: {
 						footprint: {
-							name: 'INTL_OIS_VEC - OIS_outline14'
-							// name: 'Finland_OIS_14 - OIS_Finland_14_Foot'
+							name: 'OIS_outline14'
+							
 						},
 						heatmap: {
-							name: 'INTL_OIS14_RAS'
-							// name: 'Annex14_Heatmap'
+							name: 'heatmap14'
+							
 						},
 						obstruction: {
-							name: 'INTL_OIS_VEC - ObstaclePoint'
-							// name: 'ICAO_AeroProfile - Obstacles_Annex14'
+							name: 'ObstaclePoint14'
+							
 						},
 						contours:{
-							name: 'INTL_OIS_VEC - contour14'
+							name: 'contour14'
 						},
 						elevBand:{
-							name: 'INTL_OIS_VEC - elevBand_14'
+							name: 'elevBand14'
+						},
+						accuracy:{
+						 	name: 'accuracy14'
 						}
-						// ,
-						// accuracy:{
-						// 	name: ''
-						// }
 					},
 
 					// Model attributes (case sensitive)
 					runwayKeyField: 'OBJECTID', //'SRC_RNWY_KEY', //"DESCRIP",	
 					runwaySlopeField: 'SLOPE ',
-					ProfileJsonField: 'ProfileJson',
-					obstacleJsonField: 'ObstacleJson',
+					ProfileJsonField: 'ProfileJSON',
+					obstacleJsonField: 'ObstacleJSON',
 					runwayDesgKey: 'RWYDESG'
 
-					// runwayKeyField: 'OBJECTID', //'SRC_RNWY_KEY', //"DESCRIP",	
-					// runwaySlopeField: 'SLOPE ',
-					// ProfileJsonField: 'ProfileJSON',
-					// obstacleJsonField: 'ObstacleJSON',
-					// runwayDesgKey: 'RunwayDesignator'
 
 				},
 				annex15: {
@@ -288,39 +282,34 @@ define([], function() {
 					label: 'Annex 15 (eTOD)',
 					layers: {
 						footprint: {
-							name: 'INTL_OIS_VEC - OIS_outline15'
-							// name: 'ICAO_AeroProfile - OIS_FINLAND_Foot'
+							name: 'OIS_outline15'
+							
 						},
 						heatmap: {
-							name: 'INTL_OIS15_RAS'
+							name: 'heatmap15'
 							// name: 'Annex15_Heatmap'
 						},
 						obstruction: {
-							name: 'INTL_OIS_VEC - ObstaclePoint'
-							// name: 'ICAO_AeroProfile - Obstacles_Annex15'
+							name: 'ObstaclePoint15'
+							
 						},
 						contours:{
-							name: 'INTL_OIS_VEC - contour15'
+							name: 'contour15'
 						},
 						elevBand:{
-							name: 'INTL_OIS_VEC - elevBand_15'
-						}
-						// ,
-						// accuracy:{
-						// 	name: ''
-						// }
+							name: 'elevBand15'
+						},
+						accuracy:{
+							name: 'accuracy15'
+						 }
 					},
-					runwayKeyField: 'OBJECTID', //'SRC_RNWY_KEY', //"DESCRIP",	
+					runwayKeyField: 'OBJECTID', 	
 					runwaySlopeField: 'SLOPE ',
-					ProfileJsonField: 'ProfileJson',
-					obstacleJsonField: 'ObstacleJson',
+					ProfileJsonField: 'ProfileJSON',
+					obstacleJsonField: 'ObstacleJSON',
 					runwayDesgKey: 'RWYDESG'
 
-					// runwayKeyField: 'OBJECTID', //'SRC_RNWY_KEY', //"DESCRIP",	
-					// runwaySlopeField: 'SLOPE ',
-					// ProfileJsonField: 'profileJSON',
-					// obstacleJsonField: 'obstacleJSON',
-					// runwayDesgKey: 'RunwayDesignator'
+					
 				}
 			}
 		}
