@@ -25,6 +25,26 @@ First complete the setup instructions and data preparation outlined in the Appro
 * Display data for Contours, Elevation Band, Heatmap and Obstructions layers
 
 
+## 3rd-Party Libraries
+
+
+Font Awesome licensed under [MIT and SIL OFL1.1] (http://fontawesome.io/license/) 
+
+[Normalize.ccs v3.0.2] (https://github.com/necolas/normalize.css) licensed under [MIT] (https://github.com/ArcGIS/aviation-approach-profiler/blob/383b6a4a5d0b33cceb5f3c0d7629c3a2da3da384/ApproachProfilerDev/assets/css/main.css) 
+
+Jquery Lazy Loading Images licensed under [MIT] (http://www.appelsiini.net/projects/lazyload)
+
+[Bootstrap v3.3.4] (http://getbootstrap.com/) licensed under [MIT] (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+
+Zero Clipboard Lib v1.1.7 licensed under [MIT] (http://jonrohan.github.com/ZeroClipboard/)
+
+Respond.js licensed under [MIT] (https://github.com/scottjehl/Respond)
+
+Underscore.js 1.5.2 licensed under [MIT] (https://github.com/jashkenas/underscore)
+
+D3js licensed under [BSD] (https://github.com/mbostock/d3)
+
+
 ## Resources
 
 
