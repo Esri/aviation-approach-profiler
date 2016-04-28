@@ -495,17 +495,17 @@ define([
         var i = bisectDistance(minGround, x0);
         var d0 = minGround[i - 1];
         var d1 = minGround[i];
-
+        var j = bisectDistance(leftEdge, x0);
         // Prevents re-draw errors when window is resized
         if (typeof d0 !== 'undefined'){
           var percent = (x0 - d0.m) / (d1.m - d0.m);
           var line1 = {
-            'left': leftEdge[i - 1],
-            'right': rightEdge[i - 1]
+            'left': leftEdge[j - 1],
+            'right': rightEdge[j - 1]
           };
           var line2 = {
-            'left': leftEdge[i],
-            'right': rightEdge[i]
+            'left': leftEdge[j],
+            'right': rightEdge[j]
           };
           var minPt = findY_PointPointX(minGround[i - 1], minGround[i], x0);
           var maxPt = findY_PointPointX(maxGround[i - 1], maxGround[i], x0);
