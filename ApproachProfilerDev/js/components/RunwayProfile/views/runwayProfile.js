@@ -374,7 +374,7 @@ define([
         visibleObstacle = {};
 
       // draw the corresponding mouse position on the map relative to the chart
-      function drawPosition(side1, side2, percent) {
+      function drawPosition(side1, side2, percent, asPoint) {
         var geometry, symbol;
         if (typeof positionGraphic != 'undefined') {
           gLayer.remove(positionGraphic);
@@ -388,7 +388,7 @@ define([
         var pt1 = findY_PointPointPercent(side1.left, side2.left, percent);
         var pt2 = findY_PointPointPercent(side1.right, side2.right, percent);
 
-        if (pt1.m <= 0 || pt2.m <= 0) {
+        if (pt1.m <= 0 || pt2.m <= 0 || asPoint) {
           geometry = new Point(pt1.x, pt1.y, new SpatialReference({
             wkid: 4326
           }));
@@ -483,7 +483,8 @@ define([
         var rightEdge = thisObj.rightEdge;
         var maxFocus = thisObj.maxFocus;
         var minFocus = thisObj.minFocus;
-
+        var rwy = thisObj.rwyGround;
+        
         // determine if touch or mouse event and then standardize to a single event
         // evtMove = (typeof d3.touch(this) == "undefined") ? d3.mouse(this) : d3.touch(this),
         // set geometry values for the event
@@ -496,6 +497,7 @@ define([
         var d0 = minGround[i - 1];
         var d1 = minGround[i];
         var j = bisectDistance(leftEdge, x0);
+        var asPoint = false;
         // Prevents re-draw errors when window is resized
         if (typeof d0 !== 'undefined'){
           var percent = (x0 - d0.m) / (d1.m - d0.m);
@@ -507,11 +509,35 @@ define([
             'left': leftEdge[j],
             'right': rightEdge[j]
           };
+          if (j==0){
+            j=bisectDistance(rwy, x0);
+            if (j>0 && j < rwy.length){
+              line1 = {
+                'left' : rwy[j-1],
+                'right': rwy[j-1]
+              }
+              line2 = {
+                'left' : rwy[j],
+                'right': rwy[j]
+              }
+            }else{
+              asPoint = true;
+              line1 = {
+                'left' : d0,
+                'right': d1
+              }
+              line2 = {
+                'left' : d0,
+                'right': d1
+              }
+            }
+          }
+  		  }
           var minPt = findY_PointPointX(minGround[i - 1], minGround[i], x0);
           var maxPt = findY_PointPointX(maxGround[i - 1], maxGround[i], x0);
 
           // draw indicator line in approach
-          drawPosition(line1, line2, percent);
+          drawPosition(line1, line2, percent, asPoint);
 
           // set max ground elevation text placement
           maxFocus.attr('transform',
@@ -1040,8 +1066,8 @@ define([
         rwy = this.rwyGround;
         this.minGround = rwy.concat(this.minGround);
         this.maxGround = rwy.concat(this.maxGround);
-        this.leftEdge = rwy.concat(this.leftEdge);
-        this.rightEdge = rwy.concat(this.rightEdge);
+        //this.leftEdge = rwy.concat(this.leftEdge);
+        //this.rightEdge = rwy.concat(this.rightEdge);
 
         // needs to be sorted for the hover text.
         this.rwyGround = this.sortData(this.rwyGround);
