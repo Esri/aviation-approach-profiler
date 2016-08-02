@@ -532,7 +532,6 @@ define([
               }
             }
           }
-  		  }
           var minPt = findY_PointPointX(minGround[i - 1], minGround[i], x0);
           var maxPt = findY_PointPointX(maxGround[i - 1], maxGround[i], x0);
 
