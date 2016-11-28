@@ -12,6 +12,7 @@ define([
   'dijit/_TemplatedMixin',
   'dijit/_WidgetBase',
 
+  'esri/IdentityManager',
   'esri/Color',
   'esri/geometry/Point',
   'esri/geometry/Polyline',
@@ -29,7 +30,7 @@ define([
 
   _TemplatedMixin, _WidgetBase,
 
-  Color, Point, Polyline, Graphic, GraphicsLayer, SpatialReference, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol
+  esriId, Color, Point, Polyline, Graphic, GraphicsLayer, SpatialReference, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol
 ) {
   return declare([_WidgetBase, _TemplatedMixin], {
     templateString: HtmlTemplate,
