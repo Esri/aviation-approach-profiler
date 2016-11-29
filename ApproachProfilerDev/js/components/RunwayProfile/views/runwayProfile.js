@@ -12,6 +12,7 @@ define([
   'dijit/_TemplatedMixin',
   'dijit/_WidgetBase',
 
+  'esri/IdentityManager',
   'esri/Color',
   'esri/geometry/Point',
   'esri/geometry/Polyline',
@@ -29,7 +30,7 @@ define([
 
   _TemplatedMixin, _WidgetBase,
 
-  Color, Point, Polyline, Graphic, GraphicsLayer, SpatialReference, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol
+  esriId, Color, Point, Polyline, Graphic, GraphicsLayer, SpatialReference, SimpleFillSymbol, SimpleLineSymbol, SimpleMarkerSymbol
 ) {
   return declare([_WidgetBase, _TemplatedMixin], {
     templateString: HtmlTemplate,
@@ -994,6 +995,9 @@ define([
 
       var mapSvc = app.layerLookup[model.layers.footprint.name].url + '/query';
       qString = '?where=' + model.runwayKeyField + '%3D' + sfcKey + '&outFields=' + model.runwayKeyField + '%2C' + model.runwaySlopeField + '%2C' + model.ProfileJsonField + '%2C' + model.obstacleJsonField + '&returnGeometry=false&f=json';
+
+      var token = esriId.findCredential(app.config.AGOLOrgUrl).token;
+      qString = qString + '&token=' + token;
 
       // load the data initially
       d3.json(mapSvc + qString, lang.hitch(this, function(error, featureSet) {
