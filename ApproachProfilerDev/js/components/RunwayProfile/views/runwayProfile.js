@@ -713,6 +713,7 @@ define([
 
 
       if (obstacles.length === 0) {
+        this.obsObjects = []; //clear the obstacle object
         return;
       }
 
